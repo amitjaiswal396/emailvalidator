@@ -15,11 +15,13 @@ def validateEmail(email):
             return False
         
 def corporateEmail(email):
-    banned_domains = ["gmail.com","google.com","google.co.in","hotmail.com","yahoo.com","yahoo.in","yahoo.co.in","rediffmail.com","indiatimes.com","ymail.com","vsnl.com","in.com","vsnl.net","rediff.com","sify.com","aol.in","mtnl.net.in","live.com","facebook.com"];
-    for domain in banned_domains:
-        if(endsWith(email,domain)):
-            return False
-    return True
+    if(validateEmail(email)):
+        banned_domains = ["gmail.com","google.com","google.co.in","hotmail.com","yahoo.com","yahoo.in","yahoo.co.in","rediffmail.com","indiatimes.com","ymail.com","vsnl.com","in.com","vsnl.net","rediff.com","sify.com","aol.in","mtnl.net.in","live.com","facebook.com"];
+        for domain in banned_domains:
+            if(endsWith(email,domain)):
+                return False
+        return True
+    return False
 
 
 '''
